@@ -12,6 +12,9 @@ export default function TriviaScreen({userCategoryChoice, difficulty, setGameSta
     const NEGATIVE_FEEDBACK = "Sorry, wrong answer. Lose one life."
     useEffect(() => {
         const fetchData = async () => {
+            // I want to wait 5 seconds before each fetch, I read on the website's forum you need to wait
+            // 5 seconds between fetches
+            await new Promise(resolve => setTimeout(resolve, 5000));
     try {
         const url = `https://opentdb.com/api.php?amount=1&category=${userCategoryChoice}&difficulty=${difficulty}&type=multiple`;
         const res = await fetch(url);
@@ -73,7 +76,7 @@ export default function TriviaScreen({userCategoryChoice, difficulty, setGameSta
     }
 
     // we need this guard here because the question does not load immediately
-    if (!data) return <p>Loading question...</p>
+    if (!data) return <p>Loading question in five very quick seconds...</p>
     
 
     return(
