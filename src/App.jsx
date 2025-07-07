@@ -45,7 +45,7 @@ const [currentScene, setCurrentScene] = useState(scenes[currentSceneIndex]);
      currentScene={currentScene}/> }
 
       {gameState === "gamewin" && 
-      <GameWinScreen/>}
+      <GameWinScreen setLives={setLives} setCurrentSceneIndex={setCurrentSceneIndex} setGameState={setGameState}/>}
 
       {gameState === "gamelose" &&
       <GameLoseScreen setLives={setLives} setCurrentSceneIndex={setCurrentSceneIndex} setGameState={setGameState}/>}

@@ -1,4 +1,4 @@
-export default function GameWinScreen() {
+export default function GameWinScreen({setLives, setCurrentSceneIndex, setGameState}) {
 
     return(
         <div className = "win-screen">
@@ -18,6 +18,11 @@ export default function GameWinScreen() {
 
                 Case closed.
             </p>
+                <button onClick={()=> {
+                setLives(2);
+                setCurrentSceneIndex(0);
+                setGameState("menu");
+            }}>Try again from the beginning</button>
 
         </div>
 
