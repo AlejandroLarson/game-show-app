@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import MainMenu from './MainMenu'
 import IntroScreen from './IntroScreen'
+import GameScreen from './GameScreen'
 
 function App() {
   // Our game states will be menu, intro, game, trivia, feedback, gamewin, gamelose
@@ -17,11 +18,16 @@ function App() {
 
   return (
     <>
-    {gameState==="menu" && 
-    (<MainMenu difficulty={difficulty} setDifficulty={setDifficulty} gameState = {gameState} setGameState={setGameState} />)}
+    {gameState=== "menu" && 
+    (<MainMenu difficulty={difficulty} setDifficulty={setDifficulty} setGameState={setGameState} />)}
 
     {gameState === "intro" &&
-    (<IntroScreen gameState={gameState} setGameState={setGameState}/>)}
+    (<IntroScreen setGameState={setGameState}/>)}
+
+    {gameState === "game" &&
+    (<GameScreen lives = {lives} setLives={setLives} />)}
+
+    
     </>
 
 );

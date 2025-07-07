@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Container, Typography, Select, MenuItem, Button} from '@mui/material';
 
-export default function MainMenu({difficulty, setDifficulty, gameState, setGameState }) {
+export default function MainMenu({difficulty, setDifficulty, setGameState }) {
 
   return (
     <>
