@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -7,9 +7,11 @@ import IntroScreen from './IntroScreen'
 import GameScreen from './GameScreen'
 import scenes from './assets/scenes.js'
 import TriviaScreen from './TriviaScreen.jsx'
+import GameWinScreen from './GameWinScreen.jsx'
+import GameLoseScreen from './GameLoseScreen.jsx'
 
 function App() {
-  // Our game states will be menu, intro, game, trivia, feedback, gamewin, gamelose
+  // Our game states will be menu, intro, game, trivia, gamewin, gamelose
   const [gameState, setGameState] = useState('menu');
   const [lives, setLives] = useState(2);
   const [difficulty, setDifficulty] = useState('easy');
@@ -19,9 +21,10 @@ function App() {
 const [currentSceneIndex, setCurrentSceneIndex] = useState(0);
 const [currentScene, setCurrentScene] = useState(scenes[currentSceneIndex]);
 
-  
-  // Data is a question we fetch from trivia API
-  const [data, setData] = useState([]);
+  //this will run whenever the index changes which it will as we go through the scenes
+  useEffect(() => {
+    setCurrentScene(scenes[currentSceneIndex]);
+  }, [currentSceneIndex]);
 
   return (
     <>
@@ -41,7 +44,11 @@ const [currentScene, setCurrentScene] = useState(scenes[currentSceneIndex]);
      setLives = {setLives} lives = {lives} setCurrentSceneIndex={setCurrentSceneIndex} currentSceneIndex={currentSceneIndex}
      currentScene={currentScene}/> }
 
+      {gameState === "gamewin" && 
+      <GameWinScreen/>}
 
+      {gameState === "gamelose" &&
+      <GameLoseScreen setLives={setLives} setCurrentSceneIndex={setCurrentSceneIndex} setGameState={setGameState}/>}
     </>
 
 );

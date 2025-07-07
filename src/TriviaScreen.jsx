@@ -59,6 +59,7 @@ export default function TriviaScreen({userCategoryChoice, difficulty, setGameSta
             // also check if we finished the game
             if(currentSceneIndex > 5 ){
                 setGameState("gamewin");
+                return;
             }
             setGameState("game");
         } else {

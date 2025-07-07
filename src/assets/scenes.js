@@ -5,13 +5,13 @@ const scenes = [
         title: "Museum Entrance",
         description: "You enter the museum and take in the sights. The entire history of cat society is stored in these archives and it dawns on you how important it is to solve this case. Then it also dawns on you that you just want to go home and watch Game of Paws. You wonder, did someone steal it for money? To unlock its supposed magical nature? Is it something else?",
         categories: [22, 23, 14], // Geography, History, Television
-        positiveFeedback: "You start the investigation thinking about the relevant facts and maybe still a bit distracted by that TV show."
+        positiveFeedback: "Getting that right is invigorating. You feel focused and ready to start the investigation."
     },
     {
         title: "Scruffy the Security Guard",
         description: "You find the only security guard taking a cat nap. He's startled when you poke him. Does he know anything? Is he pretending to sleep on a crazy night like this? Let's try being his friend. Find a good conversation starter and learn his story.",
         categories: [13, 15, 21], // Musical and Theatre, Video Games, Sports
-        positiveFeedback: "The security guard has expensive hobbies. Could this be our suspect?"
+        positiveFeedback: "The security guard has expensive hobbies and not enough money to pay for them. Could this be our suspect?"
     },
     {
         title: "The Crime Scene: Egyptian Exhibit",
@@ -29,7 +29,7 @@ const scenes = [
         title: "Bartholomew the Janitor",
         description: "You find Bartholomew meticulously cleaning the royal family exhibit. He mutters to himself about how much better it was in the old days. He seems obsessed with this particular area. Learn his story.",
         categories: [24, 10, 23], // Politics, Books, History
-        positiveFeedback: "Bartholomew is a traditionalist that doesn't want to see anything removed from the museum. He says it's been here longer than him, so it must stay. But he's too honorable to steal. He suggests checking the supply closet"
+        positiveFeedback: "Bartholomew is a traditionalist that doesn't want to see anything removed from the museum. He says it's been here longer than him, so it must stay. But he's too honorable to steal. He suggests checking the supply closet."
     },
     {
         title: "Hidden Vent",
