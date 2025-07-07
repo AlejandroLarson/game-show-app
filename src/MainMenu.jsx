@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Box, Container, Typography, Select, MenuItem, Button, FormControl, InputLabel } from '@mui/material';
+import React from 'react';
+import { Box, Container, Typography, Select, MenuItem, Button} from '@mui/material';
 
 export default function MainMenu({difficulty, setDifficulty, gameState, setGameState }) {
 
@@ -24,7 +24,7 @@ export default function MainMenu({difficulty, setDifficulty, gameState, setGameS
    </Box>
          <Button variant = "contained"
          onClick={() => {
-          setGameState('game');
+          setGameState('intro');
 
          }}>
         Start Game

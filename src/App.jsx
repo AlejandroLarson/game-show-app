@@ -3,30 +3,25 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import MainMenu from './MainMenu'
+import IntroScreen from './IntroScreen'
 
 function App() {
-  // Our game states will be menu, game, trivia, feedback, gamewin, gamelose
+  // Our game states will be menu, intro, game, trivia, feedback, gamewin, gamelose
   const [gameState, setGameState] = useState('menu');
   const [lives, setLives] = useState(3);
   const [difficulty, setDifficulty] = useState('easy');
   const [userCategoryChoice, setUserCategoryChoice] = useState(null);
   
+  // Data is a question we fetch from trivia API
   const [data, setData] = useState([]);
-
-  
-  const startGame = (category) => {
-    console.log("Starting game with category:", category);
-    // Transition to your trivia screen here
-    fetch("https://opentdb.com/api.php?amount=10&category=11&difficulty=medium&type=multiple")
-
-
-  };
 
   return (
     <>
     {gameState==="menu" && 
     (<MainMenu difficulty={difficulty} setDifficulty={setDifficulty} gameState = {gameState} setGameState={setGameState} />)}
 
+    {gameState === "intro" &&
+    (<IntroScreen gameState={gameState} setGameState={setGameState}/>)}
     </>
 
 );
