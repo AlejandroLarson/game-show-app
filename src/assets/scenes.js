@@ -1,3 +1,5 @@
+// I wrote these scenes to structure the linear story. Random questions from the API are fetched in each scene.
+
 const scenes = [
     {
         title: "Museum Entrance",

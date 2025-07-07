@@ -6,6 +6,7 @@ import MainMenu from './MainMenu'
 import IntroScreen from './IntroScreen'
 import GameScreen from './GameScreen'
 import scenes from './assets/scenes.js'
+import TriviaScreen from './TriviaScreen.jsx'
 
 function App() {
   // Our game states will be menu, intro, game, trivia, feedback, gamewin, gamelose
@@ -32,7 +33,13 @@ const [currentScene, setCurrentScene] = useState(scenes[currentSceneIndex]);
 
     {gameState === "game" &&
     (<GameScreen currentScene = {currentScene} setCurrentSceneIndex={setCurrentSceneIndex}
-     lives = {lives} setLives={setLives} userCategoryChoice={userCategoryChoice} setUserCategoryChoice={setUserCategoryChoice} />)}
+     lives = {lives} setLives={setLives} userCategoryChoice={userCategoryChoice} 
+     setUserCategoryChoice={setUserCategoryChoice} setGameState={setGameState}/>)}
+
+     {gameState === "trivia" &&
+     <TriviaScreen userCategoryChoice = {userCategoryChoice} difficulty={difficulty} setGameState={setGameState} 
+     setLives = {setLives} lives = {lives} setCurrentSceneIndex={setCurrentSceneIndex} currentSceneIndex={currentSceneIndex}
+     currentScene={currentScene}/> }
 
 
     </>
