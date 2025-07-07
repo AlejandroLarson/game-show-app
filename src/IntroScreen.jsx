@@ -9,10 +9,9 @@ export default function IntroScreen({setGameState}) {
             </p>
             <p> You will encounter obstacles in your investigation. Overcome them by demonstrating mastery of a topic and answering a trivia question. Answer correctly and move to the next step. Answer incorrectly and you lose a life. Reaching zero lives means the case goes cold and the game is over. Good luck!
             </p>
-            <Button 
-            variant = "contained"
+            <button
             onClick={()=> setGameState('game')}
-            >Continue</Button>
+            >Continue</button>
         </div>
     );
 }
