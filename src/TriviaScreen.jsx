@@ -28,8 +28,9 @@ export default function TriviaScreen({userCategoryChoice, difficulty, setGameSta
         } catch (error) {
             console.error("Error fetching data", error);
         }
-        fetchData();
+        
     } 
+    fetchData();
     }, []);
 
     const handleAnswer = (answer) => {
@@ -49,7 +50,7 @@ export default function TriviaScreen({userCategoryChoice, difficulty, setGameSta
     };
 
     const handleContinue = () => {
-        isCorrect = (selectedAnswer === data.correctAnswer);
+        const isCorrect = (selectedAnswer === data.correctAnswer);
         setSelectedAnswer(null);
         setFeedback(null);
         // was correct
@@ -62,7 +63,7 @@ export default function TriviaScreen({userCategoryChoice, difficulty, setGameSta
             setGameState("game");
         } else {
             // checking for loss condition
-            if(lives == 0){
+            if(lives <= 0){
                 setGameState("gamelose");
             } else {
                 setGameState("game");
