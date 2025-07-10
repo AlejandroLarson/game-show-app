@@ -7,7 +7,7 @@ export default function GameLoseScreen({setLives, setCurrentSceneIndex, setGameS
                 you hope it's having a lovely time. 
             </p>
             <button onClick={()=> {
-                setLives(2);
+                setLives(9);
                 setCurrentSceneIndex(0);
                 setGameState("menu");
             }}>Try again from the beginning</button>

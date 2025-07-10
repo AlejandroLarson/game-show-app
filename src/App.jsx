@@ -13,7 +13,7 @@ import GameLoseScreen from './GameLoseScreen.jsx'
 function App() {
   // Our game states will be menu, intro, game, trivia, gamewin, gamelose
   const [gameState, setGameState] = useState('menu');
-  const [lives, setLives] = useState(2);
+  const [lives, setLives] = useState(9);
   const [difficulty, setDifficulty] = useState('easy');
   const [userCategoryChoice, setUserCategoryChoice] = useState(null);
 
@@ -29,7 +29,7 @@ const [currentScene, setCurrentScene] = useState(scenes[currentSceneIndex]);
   return (
     <>
     {gameState=== "menu" && 
-    (<MainMenu difficulty={difficulty} setDifficulty={setDifficulty} setGameState={setGameState} />)}
+    (<MainMenu difficulty={difficulty} setDifficulty={setDifficulty} setGameState={setGameState} setLives={setLives} />)}
 
     {gameState === "intro" &&
     (<IntroScreen setGameState={setGameState}/>)}

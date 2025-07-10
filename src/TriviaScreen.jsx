@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react';
+import detectiveImage from './assets/cat-detective-1.png'; 
 
 export default function TriviaScreen({userCategoryChoice, difficulty, setGameState, setLives, 
     lives, setCurrentSceneIndex, currentSceneIndex, currentScene}) {
@@ -67,7 +68,7 @@ export default function TriviaScreen({userCategoryChoice, difficulty, setGameSta
             setGameState("game");
         } else {
             // checking for loss condition
-            if(lives <= 0){
+            if(lives < 0){
                 setGameState("gamelose");
             } else {
                 setGameState("game");
@@ -76,7 +77,13 @@ export default function TriviaScreen({userCategoryChoice, difficulty, setGameSta
     }
 
     // we need this guard here because the question does not load immediately
-    if (!data) return <p>Loading question in five very quick seconds...</p>
+    if (!data) return (<><p>Loading question in five very quick seconds...</p>
+                <img 
+                  src={detectiveImage} 
+                  alt="Detective Mittens" 
+                  style={{ width: '200px', height: 'auto', marginBottom: '20px' }}
+                /> 
+                </>);
     
 
     return(
@@ -89,6 +96,12 @@ export default function TriviaScreen({userCategoryChoice, difficulty, setGameSta
                 {data.shuffledAnswers.map((answer) => (
                     <button
                     key ={answer}
+                    className={ selectedAnswer ? answer === data.correctAnswer ? 'answer-button correct'
+                        : answer === selectedAnswer
+                        ? 'answer-button incorrect'
+                        : 'answer-button disabled'
+                    : 'answer-button'
+                    }
                     onClick = {()=> handleAnswer(answer)}
                     dangerouslySetInnerHTML={{__html: answer}}
                     />
